@@ -22,13 +22,13 @@ def find_flames(filename):
 
     for pixel in new_image:
         average = (pixel.red + pixel.green + pixel.blue) // 3
-    # See if pixel is sufficienctly red, if so set to max red and zero green and blue
+    # Check if pixel is sufficienctly red, if so set to max red and zero green and blue
         if pixel.red >= average * INTENSITY_THRESHOLD:
             pixel.red = 255
             pixel.blue = 0
             pixel.green = 0 
         else:
-    # For not sufficiently red pixels, make them grayscale
+    # For not sufficiently red pixels, set to grayscale
             pixel.red = average
             pixel.blue = average
             pixel.green = average
